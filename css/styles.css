@@ -1,0 +1,188 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow: hidden;
+}
+
+.fondo-morado {
+    background: linear-gradient(to bottom, #D8BFD8, #9B59B6);
+}
+
+.pantalla {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.mensaje-escribiendo {
+    font-size: 20px;
+    color: #f0e1ef;
+    font-weight: bold;
+    border-right: 2px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: escribir 3s steps(40, end) forwards;
+}
+
+@keyframes escribir {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.boton {
+    padding: 10px 20px;
+    font-size: 18px;
+    background: #30afd9;
+    color: #6A0572;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.botonflo {
+    padding: 10px 20px;
+    font-size: 18px;
+    background: #e7f249;
+    color: #c902d7;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.galeria {
+    display: flex;
+    gap: 15px;
+}
+
+.galeria img {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease;
+}
+
+.galeria img:hover {
+    transform: scale(1.1);
+}
+
+.flores {
+    display: flex;
+    gap: 20px;
+}
+
+
+@keyframes florecer {
+    from { transform: scale(0.8); }
+    to { transform: scale(1.1); }
+}
+
+.espaciada {
+    margin: 2px;
+    width: 140px;
+    height: 140px;
+    object-fit: scale-down;
+}
+.fila {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+
+.flor::before, .flor::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, yellow 50%, orange 70%);
+    border-radius: 50%;
+}
+
+.flor::before { transform: rotate(45deg); }
+.flor::after { transform: rotate(-45deg); }
+
+@keyframes florecer {
+    from { transform: scale(0.8); }
+    to { transform: scale(1.1); }
+}
+
+
+.jardin {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 30px;
+    height: 350px;
+    margin-top: 20px;
+}
+
+/* Estilo del tallo */
+.flor {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tallo {
+    width: 10px;
+    height: 100px;
+    background: green;
+    border-radius: 5px;
+}
+
+/* Hojas del tallo */
+.hoja {
+    width: 20px;
+    height: 30px;
+    background: green;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hoja.izquierda {
+    left: -15px;
+    top: 30px;
+    transform: rotate(-30deg);
+}
+
+.hoja.derecha {
+    right: -15px;
+    top: 50px;
+    transform: rotate(30deg);
+}
+
+/* Estilo del centro de la flor */
+.centro {
+    width: 50px;
+    height: 50px;
+    background: brown;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+}
+
+/* Estilo de los pétalos */
+.petalo {
+    width: 50px;
+    height: 50px;
+    background: yellow;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.petalo:nth-child(1) { top: -25px; }
+.petalo:nth-child(2) { bottom: -25px; }
+.petalo:nth-child(3) { left: -25px; }
+.petalo:nth-child(4) { right: -25px; }
+.petalo:nth-child(5) { top: -18px; left: -18px; }
+.petalo:nth-child(6) { top: -18px; right: -18px; }
+.petalo:nth-child(7) { bottom: -18px; left: -18px; }
+.petalo:nth-child(8) { bottom: -18px; right: -18px; }

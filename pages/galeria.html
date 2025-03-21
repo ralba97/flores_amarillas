@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra nuestros momentos mágicos ✨💕</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script>
+        function revelarFoto(elemento, imagenReal) {
+            elemento.src = imagenReal;
+            elemento.classList.add("revelada");
+        }
+    </script>
+</head>
+<body class="fondo-morado">
+    <div class="pantalla">
+        <div class="mensaje-escribiendo">Toque para revelar cada recuerdo.... 💖📸</div>
+        <br>
+        <div class="galeria-grid">
+            <!-- 20 imágenes ocultas en filas de 5 con espacios bien distribuidos -->
+            <script>
+                for (let i = 1; i <= 15; i++) {
+                    if (i % 5 === 1) document.write('<div class="fila">');
+                    document.write(`<img src='../img/incognita.gif' alt='Foto ${i}' class='foto-oculta espaciada' onclick="revelarFoto(this, '../img/foto${i}.jpeg')">`);
+                    if (i % 5 === 0) document.write('</div>');
+                }
+            </script>
+        </div>
+        <div class="mensaje-escribiendo">Si termino de revelar los recuerdos presione....</div>
+        <br>
+        <button class="boton" onclick="window.location.href='mensaje.html'">Continuar</button>
+    </div>
+</body>
+</html>
